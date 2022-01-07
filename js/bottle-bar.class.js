@@ -6,6 +6,7 @@ class BottleBar extends DrawableObject {
   constructor(width) {
     super(width).loadImage(MOVING_IMAGES.BottleBar[0]);
     this.loadImages(MOVING_IMAGES.BottleBar);
+    this.height = 39.83;
   }
 
   updateBottleBar(bottleAmount) {

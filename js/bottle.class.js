@@ -8,6 +8,7 @@ class Bottle extends MovableObject {
     this.y = 310;
     this.imagesCache = this.loadImages(MOVING_IMAGES.Bottle);
     this.animate(0, MOVING_IMAGES.Bottle);
+    this.height = 50;
   }
 
   hit() {

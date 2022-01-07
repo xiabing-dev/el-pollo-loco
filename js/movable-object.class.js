@@ -27,7 +27,6 @@ class MovableObject {
   loadImage(path) {
     this.img = new Image();
     this.img.src = path;
-    this.height = this.width * (this.img.height / this.img.width); //calculate heigh according width
   }
 
   loadImages(pathArr) {

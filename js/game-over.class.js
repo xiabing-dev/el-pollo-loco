@@ -5,5 +5,6 @@ class GameOver extends DrawableObject {
 
   constructor(width) {
     super(width).loadImage("/img/9.Intro _ Outro Image/_Game over_ screen/3.Game over.png");
+    this.height = 405;
   }
 }

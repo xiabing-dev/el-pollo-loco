@@ -6,6 +6,7 @@ class CoinBar extends DrawableObject {
   constructor(width) {
     super(width).loadImage(MOVING_IMAGES.CoinBar[0]);
     this.loadImages(MOVING_IMAGES.CoinBar);
+    this.height = 39.83;
   }
 
   updateCoinbar(coinAmount) {

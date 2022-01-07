@@ -34,7 +34,7 @@ class Character extends MovableObject {
     this.walkAnimate();
     this.jumpAnimate();
     this.hurtAnimate();
-
+    this.height = 196.72;
   }
 
   walkAnimate() {
@@ -55,15 +55,19 @@ class Character extends MovableObject {
   }
 
   moveRight() {
+    if(!this.otherDirection) {
+      this.x += this.speed;
+    }
     this.otherDirection = false;
     this.keydown = true;
-    this.x += this.speed;
   }
 
   moveLeft() {
+    if(this.otherDirection) {
+      this.x -= this.speed;
+    }
     this.otherDirection = true;
     this.keydown = true;
-    this.x -= this.speed;
   }
 
   jump() {

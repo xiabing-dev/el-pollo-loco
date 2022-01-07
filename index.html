@@ -7,6 +7,7 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="icon.png" type="image/x-icon" />
     <link rel="stylesheet" href="style.css">
 
     <script src="./js/drawable-object.class.js"></script>    
@@ -35,10 +36,19 @@
   <body onload="init()">
 
     <div class="canvas-container">
-      <h3>S = Start, → = Right Direction, ← = Left Direction, SPACE = Jump, A = Attack</h3>
+      <div class="title">
+        <div class="instruction"><div class="key">S</div><span>Start</span></div>
+        <div class="instruction"><div class="key">←</div><span>Move right</span></div>
+        <div class="instruction"><div class="key">→</div><span>Move left</span></div>
+        <div class="instruction"><div class="key">SPACE</div><span>Jump</span></div>
+        <div class="instruction"><div class="key">F</div><span>Fire</span></div>
+      </div>
       <canvas id="canvas" width="720px" height="405">
       </canvas>
-      <button onclick="fullScreen()">Full Screen</button>
+      <div>
+        <button onclick="fullScreen()">Full Screen</button>
+        <button onclick="restart()">Restart</button>
+      </div>
     </div>
   </body>
 </html>

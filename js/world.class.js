@@ -1,5 +1,4 @@
 class World {
-
   gameStart = new GameStart(720);
   character = new Character(100);
   starusBar = new StatusBar(150);
@@ -15,15 +14,15 @@ class World {
 
   constructor(canvas) {
     this.canvas = canvas;
-    this.ctx = canvas.getContext('2d');
+    //this.ctx = canvas.getContext('2d');
     this.detectMovement();
     this.checkCollisions();
     this.draw();
   }
 
   draw() {
-    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    this.ctx.translate(this.camera_x, 0);
+    ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    ctx.translate(this.camera_x, 0);
 
     if (this.startGame == true) {
       this.addObjectsToCanvas(this.level.backgroundObjects);
@@ -42,15 +41,15 @@ class World {
       }
       
       this.addObjectsToCanvas(this.level.clouds);
-      this.ctx.translate(-this.camera_x, 0);
+      ctx.translate(-this.camera_x, 0);
       this.addToCanvas(this.starusBar);
       this.addToCanvas(this.bottleBar);
       this.addToCanvas(this.coinBar);
-      this.ctx.translate(this.camera_x, 0);
+      ctx.translate(this.camera_x, 0);
       this.addObjectsToCanvas(this.level.enemies.filter( enemy => enemy.isDisplay == true));
       this.addObjectsToCanvas(this.level.bottles.filter( bottle => bottle.isDisplay == true));
       this.addObjectsToCanvas(this.level.coins.filter( coin => coin.isDisplay == true));
-      this.ctx.translate(-this.camera_x, 0);
+      ctx.translate(-this.camera_x, 0);
       if (this.character.live == 0) {
         this.addToCanvas(this.gameOver);
       }
@@ -65,17 +64,18 @@ class World {
   }
 
   dealWithOtherDirection(object) {
-    this.ctx.save();
-    this.ctx.translate(object.width, 0);
-    this.ctx.scale(-1, 1);
+    ctx.save();
+    ctx.translate(object.width, 0);
+    ctx.scale(-1, 1);
     object.x = -object.x;
     this.addToCanvas(object);
     object.x = -object.x;
-    this.ctx.restore();
+    ctx.restore();
   }
 
   addToCanvas(object) {
-      this.ctx.drawImage(object.img, object.x, object.y, object.width, object.height);
+    //console.log(object);
+    ctx.drawImage(object.img, object.x, object.y, object.width, object.height);
   }
 
   addObjectsToCanvas(objects) {
@@ -110,7 +110,7 @@ class World {
         if(e.code == "Space") {
           this.character.jump();
         }
-        if(e.code == "KeyA") {
+        if(e.code == "KeyF") {
           if (this.character.haveBottles > 0) {
             if (this.character.otherDirection == true) {
               this.throwableBottles.push(new ThrowableBottle(this.character.x + this.character.width / 2, this.character.y + 80, this.character.otherDirection));

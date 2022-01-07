@@ -11,7 +11,7 @@ canvas {
 }
 
 button {
-  background-color: cornflowerblue;;
+  background-color: cornflowerblue;
   color: aliceblue;
   margin: 4px;
   padding: 4px 16px;
@@ -22,4 +22,37 @@ button {
 
 button:hover {
   cursor: pointer;
+  background-color: rgb(29, 91, 206);
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.instruction {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.instruction span {
+  color: rgb(78, 73, 78);
+  font-weight: 700;
+}
+
+.key {
+  height: 20px;
+  min-width: 20px;
+  display: table-cell;
+  border: 1px solid black;
+  background-color: rgb(29, 91, 206);;
+  color: white;
+  text-align: center;
+  border-radius: 3px;
+  margin-right: 8px;
+  margin-left: 8px;
 }

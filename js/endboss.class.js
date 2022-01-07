@@ -16,6 +16,7 @@ class Endboss extends MovableObject {
     this.hurtImages = this.loadImages(MOVING_IMAGES.Endboss_Hurting);
     this.deadImages = this.loadImages(MOVING_IMAGES.Endboss_Dead);
     this.hurtAnimate();
+    this.height = 232.91;
   }
 
   hurt() {

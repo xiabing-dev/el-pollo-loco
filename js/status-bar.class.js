@@ -6,6 +6,7 @@ class StatusBar extends DrawableObject {
   constructor(width) {
     super(width).loadImage(MOVING_IMAGES.StatusBar[5]);
     this.loadImages(MOVING_IMAGES.StatusBar);
+    this.height = 39.83;
   }
 
   updateStatusBar(livePoint) {
